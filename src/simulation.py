@@ -13,6 +13,7 @@ class Simuation:
         self.sigma = sigma
         self.beta = beta
         self.attractor = LorenzAttractor(sigma, beta, ro)
+        plt.style.use("dark_background")
 
     def run(self, initial_state: tuple, dt: float, steps: int):
         states = np.zeros((steps, 3))
@@ -36,9 +37,11 @@ class Simuation:
         steps_per_frame: int = 10,
         color_speed: float = 10.0,
         cmap_name: str = "hsv",
+        line_width: float = 1.0,
     ):
         fig = plt.figure()
         ax = fig.add_subplot(111, projection="3d")
+        ax.set_axis_off() # Comment if you want to see the axes
 
         # Colormap setup for time-varying colors
         cmap = cm.get_cmap(cmap_name)
@@ -65,7 +68,7 @@ class Simuation:
         else:
             segs_init = np.stack([init_segment[:-1], init_segment[1:]], axis=1)
         # Initialize collection with colors and add to axes
-        collection = Line3DCollection(segs_init, linewidth=2)
+        collection = Line3DCollection(segs_init, linewidth=line_width)
         init_count = segs_init.shape[0]
         collection.set_color(colors_all[:init_count])
         ax.add_collection3d(collection)
