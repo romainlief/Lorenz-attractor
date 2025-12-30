@@ -41,7 +41,7 @@ class Simuation:
     ):
         fig = plt.figure()
         ax = fig.add_subplot(111, projection="3d")
-        ax.set_axis_off() # Comment if you want to see the axes
+        ax.set_axis_off()  # Comment if you want to see the axes
 
         # Colormap setup for time-varying colors
         cmap = cm.get_cmap(cmap_name)

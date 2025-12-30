@@ -1,3 +1,6 @@
 RO = 28.0
 SIGMA = 10.0
 BETA = 8.0 / 3.0
+DT = 0.01
+STEPS = 20000
+INIT_STATE = (1.0, 1.0, 1.0)
