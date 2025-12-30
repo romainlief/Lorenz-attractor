@@ -8,7 +8,7 @@ def main():
     dt = 0.01
     steps = 20000  # more points for smoother curves
 
-    simulation = Simuation(RO, SIGMA, BETA, LorenzAttractor, integrator="rk4")
+    simulation = Simuation(RO, SIGMA, BETA, LorenzAttractor)
     states = simulation.run(initial_state, dt, steps)
     simulation.animate(states, interval=30, steps_per_frame=10)
 
